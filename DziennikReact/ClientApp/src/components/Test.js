@@ -3,7 +3,7 @@
 export const Test = () =>  {
     
     useEffect(() => {
-        fetch('uczen?id=1').then(
+        fetch('nauczyciel?id=1').then(
             (res) => {
                 console.log(res.text())
             })
