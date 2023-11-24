@@ -8,7 +8,7 @@ namespace DziennikReact.Models {
         
         public double SredniaPunktow {
             get {
-                if (ListaKlas == null) return 0;
+                if (ListaKlas == null || ListaKlas.Count == 0) return 0;
                 double pkt = 0; 
                 foreach (var klasa in ListaKlas) {
                     pkt += klasa.SredniaPunktow;

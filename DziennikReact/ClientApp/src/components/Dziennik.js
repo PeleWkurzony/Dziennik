@@ -12,16 +12,16 @@ export const Dziennik = () => {
             request += "?id=" + id;
         }
         let data = fetch(request)
-            .then(res => res.json())
+            .then(res => { return res.json() })
             .then(data => { setData(data) });
     }
     
     return (
         <>
             <Search loadTable={loadTable} />
-            {data ? data.map((value, index) => 
-                <Table className="table table-bordered table-hover" key={index} data={value} />
-            ) : <></> }
+            {data ? 
+                <Table className="table table-bordered table-hover" data={data} />
+            : <></> }
         </>
     )
 }

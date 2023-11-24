@@ -13,14 +13,25 @@ export const TableSzkola = ({ data, className }) => {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>{data.Id}</td>
-                    <td>{data.Nazwa}</td>
-                    <td>{data.ListaKlas ? data.ListaKlas.map((value, index) => 
-                        <TableKlasa className={className} key={index} data={value} />
-                    ) : ""}</td>
-                    <td>{data.SredniaPunktow}</td>
-                </tr>
+                {Array.isArray(data) ? data.map((value, index) =>
+                    <tr key={index}>
+                        <td>{value.Id}</td>
+                        <td>{value.Nazwa}</td>
+                        <td>{value.ListaKlas ? value.ListaKlas.map((value, index) =>
+                            <TableKlasa className={className} key={index} data={value} />
+                        ) : ""}</td>
+                        <td>{value.SredniaPunktow}</td>
+                    </tr>
+                ) :
+                    <tr>
+                        <td>{data.Id}</td>
+                        <td>{data.Nazwa}</td>
+                        <td>{data.ListaKlas ? data.ListaKlas.map((value, index) =>
+                            <TableKlasa className={className} key={index} data={value} />
+                        ) : ""}</td>
+                        <td>{data.SredniaPunktow}</td>
+                    </tr>
+                }
             </tbody>
         </table>
     )

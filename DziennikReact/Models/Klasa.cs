@@ -9,7 +9,7 @@ namespace DziennikReact.Models {
 
         public double SredniaPunktow {
             get {
-                if (ListaUczniow == null) return 0;
+                if (ListaUczniow == null || ListaUczniow.Count == 0) return 0;
                 int pkt = 0; 
                 foreach (var uczen in ListaUczniow) {
                     pkt += uczen.Punkty;

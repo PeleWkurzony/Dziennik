@@ -23,13 +23,27 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>{data.Id}</td>
-                    <td>{data.Imie}</td>
-                    <td>{data.Nazwisko}</td>
-                    <td>{plec}</td>
-                    <td>{data.Punkty}</td>
-                </tr>
+                {Array.isArray(data) ? data.map((value, index) =>
+                    <tr key={index}>
+                        <td>{value.Id}</td>
+                        <td>{value.Imie}</td>
+                        <td>{value.Nazwisko}</td>
+                        {value.plec == 0 ? 
+                            <td>Mężczyzna</td> : value.plec == 1 ?
+                            <td>Kobieta</td> :
+                            <td>Inna</td>
+                        }
+                        <td>{value.Punkty}</td>
+                    </tr>
+                ) :
+                    <tr>
+                        <td>{data.Id}</td>
+                        <td>{data.Imie}</td>
+                        <td>{data.Nazwisko}</td>
+                        <td>{plec}</td>
+                        <td>{data.Punkty}</td>
+                    </tr>
+                }
             </tbody>
         </table>
     )
