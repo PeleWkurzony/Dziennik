@@ -41,7 +41,7 @@ namespace DziennikReact.Controllers {
                     while (reader.Read()) {
                         var student = new Uczen() {
                             Imie = reader.GetString(0),
-                            Nazwsisko = reader.GetString(1),
+                            Nazwisko = reader.GetString(1),
                             Id = reader.GetInt32(2),
                             Plec = Plec.Inne,
                             Punkty = reader.GetInt32(4),

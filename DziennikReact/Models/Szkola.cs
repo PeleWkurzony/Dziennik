@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 
 namespace DziennikReact.Models {
-    public struct Szkola {
+    public class Szkola {
         public int Id { get; set; }
         public string Nazwa { get; set; }
         public List<Klasa>? ListaKlas { get; set; } 
@@ -16,6 +16,9 @@ namespace DziennikReact.Models {
 
                 return  pkt / ListaKlas.Count;
             }
+        }
+        public string Type {
+            get => "szkola";
         }
     }
 }

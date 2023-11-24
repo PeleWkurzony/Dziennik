@@ -39,10 +39,11 @@ namespace DziennikReact.Controllers {
                         }
                     }
                     
+                    
                     szkolas.ForEach((szkola) => {
                         szkola.ListaKlas = GetKlasesList(szkola.Id);
                     });
-
+                    
                     return JsonSerializer.Serialize(szkolas);
                 }
             }
@@ -53,6 +54,7 @@ namespace DziennikReact.Controllers {
 
         private List<Klasa> GetKlasesList(Int32 id) {
             using (var connection = new SqliteConnection("Data source=SqlLiteDB.db")) {
+                connection.Open();
                 var klases = new List<Klasa>();
                 var command = connection.CreateCommand();
                 command.CommandText = "SELECT id FROM Klasa WHERE Szkola = $id";

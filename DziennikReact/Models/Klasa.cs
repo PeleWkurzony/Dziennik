@@ -18,5 +18,8 @@ namespace DziennikReact.Models {
                 return (double) pkt / ListaUczniow.Count;
             }
         }
+        public string Type {
+            get => "klasa";
+        }
     }
 }

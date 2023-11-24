@@ -2,6 +2,7 @@ import { Counter } from "./components/Counter";
 import { FetchData } from "./components/FetchData";
 import { Home } from "./components/Home";
 import { Test } from "./components/Test";
+import { Dziennik } from "./components/Dziennik";
 
 const AppRoutes = [
   {
@@ -20,6 +21,10 @@ const AppRoutes = [
     path: '/test',
     element: <Test />
   },
+  {
+    path: '/dziennik',
+    element: <Dziennik />
+  }
 ];
 
 export default AppRoutes;
