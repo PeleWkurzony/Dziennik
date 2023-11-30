@@ -1,4 +1,5 @@
 ﻿import { TableKlasa } from "./TableKlasa";
+import { RemoveTableButton } from "./RemoveTableButton";
 
 export const TableSzkola = ({ data, className }) => {
 
@@ -10,6 +11,7 @@ export const TableSzkola = ({ data, className }) => {
                     <th>Nazwa</th>
                     <th>Lista Klas</th>
                     <th>Średnia Punktów</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -18,18 +20,20 @@ export const TableSzkola = ({ data, className }) => {
                         <td>{value.Id}</td>
                         <td>{value.Nazwa}</td>
                         <td>{value.ListaKlas ? value.ListaKlas.map((value, index) =>
-                            <TableKlasa className={className} key={index} data={value} />
+                            <TableKlasa nested={true} className={className} key={index} data={value} />
                         ) : ""}</td>
                         <td>{value.SredniaPunktow}</td>
+                        <RemoveTableButton id={value.Id} type={value.Type} />
                     </tr>
                 ) :
                     <tr>
                         <td>{data.Id}</td>
                         <td>{data.Nazwa}</td>
                         <td>{data.ListaKlas ? data.ListaKlas.map((value, index) =>
-                            <TableKlasa className={className} key={index} data={value} />
+                            <TableKlasa nested={true} className={className} key={index} data={value} />
                         ) : ""}</td>
                         <td>{data.SredniaPunktow}</td>
+                        <RemoveTableButton id={data.Id} type={data.Type} />
                     </tr>
                 }
             </tbody>

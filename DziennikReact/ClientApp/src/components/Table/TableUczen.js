@@ -1,4 +1,6 @@
-﻿export const TableUczen = ({ data, className }) => {
+﻿import { RemoveTableButton } from "./RemoveTableButton";
+
+export const TableUczen = ({ data, className, nested }) => {
     
     let plec = "";
     if (data.Plec == 0){
@@ -20,6 +22,9 @@
                     <th>Nazwisko</th>
                     <th>Płeć</th>
                     <th>Punkty</th>
+                    {nested ? "" :
+                        <th></th>
+                    }
                 </tr>
             </thead>
             <tbody>
@@ -34,6 +39,9 @@
                             <td>Inna</td>
                         }
                         <td>{value.Punkty}</td>
+                        {nested ? "" :
+                            <RemoveTableButton id={value.Id} type={value.Type} />
+                        }
                     </tr>
                 ) :
                     <tr>
@@ -42,6 +50,9 @@
                         <td>{data.Nazwisko}</td>
                         <td>{plec}</td>
                         <td>{data.Punkty}</td>
+                        {nested ? "" :
+                            <RemoveTableButton id={data.Id} type={data.Type} />
+                        }
                     </tr>
                 }
             </tbody>

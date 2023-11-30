@@ -15,16 +15,16 @@ export const Table = ({ data, className }) => {
     }
     
     if (data[0].Type == "szkola") {
-        return <TableSzkola className={className} data={data} />
+        return <TableSzkola nested={false} className={className} data={data} />
     }
     else if (data[0].Type == "klasa") {
-        return <TableKlasa className={className} data={data} />
+        return <TableKlasa nested={false} className={className} data={data} />
     }
     else if (data[0].Type == "nauczyciel") {
-        return <TableNauczyciel className={className} data={data} />
+        return <TableNauczyciel nested={false} className={className} data={data} />
     }
     else if (data[0].Type == "uczen") {
-        return <TableUczen className={className} data={data} />
+        return <TableUczen nested={false} className={className} data={data} />
     }
     else {
         return <h1 className="text-center mt-5"> Coś poszło nie tak!" </h1>

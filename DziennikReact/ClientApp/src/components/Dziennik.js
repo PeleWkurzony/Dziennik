@@ -1,6 +1,7 @@
 ﻿import { Search } from "./Search";
 import { useState } from 'react';
-import { Table } from './Table';
+import { Table } from './Table/Table';
+import { AddButton } from "./AddButton";
 
 export const Dziennik = () => {
     
@@ -18,9 +19,12 @@ export const Dziennik = () => {
     
     return (
         <>
-            <Search loadTable={loadTable} />
+            <div className="row">
+                <Search loadTable={loadTable} />
+                <AddButton />
+            </div>
             {data ? 
-                <Table className="table table-bordered table-hover" data={data} />
+                <Table className="table table-bordered align-middle" data={data} />
             : <></> }
         </>
     )

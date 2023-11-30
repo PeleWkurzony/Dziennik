@@ -10,6 +10,8 @@ const context = [
     "/szkola",
     "/nauczyciel",
     "/klasa",
+    "/usun",
+    "/dodaj",
 ];
 
 const onError = (err, req, resp, target) => {

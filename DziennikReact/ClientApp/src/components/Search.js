@@ -14,13 +14,13 @@ export const Search = ({ loadTable }) => {
     }
     
     return (
-        <div className="row">
-            <div className="mb-3 col">
+        <div className="col-11 row">
+            <div className="mb-3 col-6">
                 <label htmlFor="searchInput" className="form-label">ID</label>
                 <input onChange={onChange} type="number" className="form-control" id="searchInput"
                        placeholder="ID" />
             </div>
-            <div className="mb-3 col">
+            <div className="mb-3 col-6">
                 <label htmlFor="selectType" className="form-label"> Typ </label>
                 <select onChange={onChange} className="form-select" id="selectType">
                     <option value="szkola"> Szkoły </option>
